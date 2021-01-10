@@ -1,2 +1,2 @@
-# cipi.sh
-cipi.sh website
+# Repository of cipi.sh website
+Website & Documentation Repository
