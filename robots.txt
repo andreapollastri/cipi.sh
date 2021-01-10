@@ -1,0 +1,3 @@
+Sitemap: http://cipi.sh/sitemap.xml
+User-agent:*
+Disallow:
