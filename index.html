@@ -1,15 +1,354 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>CIPI - Coming Soon</title>
-      <style>html{font-family: Arial, sans-serif; color: #000; font-size: 16px; font-weight: 400;}main{margin: 5rem 0 0 5rem;}h1, p{margin-top: 0; margin-bottom: 2rem;}h1{font-weight: 700; font-size: 4.5rem;}p{color: #7d7d7d; font-size: 1.75rem;}@media screen and (max-width: 768px){html{font-size: 12px;}main{margin: 3rem 0 0 3rem;}}</style>
-   </head>
-   <body>
-      <main>
-         <h1>Cipi v3 website coming soon!</h1>
-         <p>Cipi v3 is available in Github and this website will be update soon...</p>
-      </main>
-   </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>Cipi - Control Panel</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cipi is a LEMP based Control Panel and works on Digital Ocean, AWS and other providers. It's an alternative to Runcloud, Ploi.io, Serverpilot, Forge, Moss.sh and similar software.">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+
+    <!-- Theme CSS --> 
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+	<!-- Custom CSS -->
+	<style>
+		#back-to-top {
+			position: fixed;
+			bottom: 40px;
+			right: 40px;
+			z-index: 9999;
+			width: 32px;
+			height: 32px;
+			text-align: center;
+			line-height: 30px;
+			background: #f5f5f5;
+			color: #444;
+			cursor: pointer;
+			border: 0;
+			border-radius: 2px;
+			text-decoration: none;
+			transition: opacity 0.2s ease-out;
+			opacity: 0;
+		}
+		#back-to-top:hover {
+			background: #e9ebec;
+		}
+		#back-to-top.show {
+			opacity: 1;
+		}
+	</style>
+
+</head> 
+<body> 
+	<a name="index"></a>   
+    <header class="header fixed-top">	    
+        <div class="branding">
+            <div class="container-fluid position-relative">
+				<nav class="navbar navbar-expand-lg" >
+                    <div class="site-logo"><a class="navbar-brand" href="#index"><span class="logo-text">Cipi<span class="text-alt"> Control Panel</span></span></a></div>    
+
+					<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+	                    <span> </span>
+	                    <span> </span>
+	                    <span> </span>
+	                </button>
+					
+					<div class="collapse navbar-collapse py-3 py-lg-0" id="navigation">
+						<ul class="navbar-nav ml-lg-auto">
+							<li class="nav-item mr-lg-4">
+								<a class="nav-link" href="#features">Features</a>
+							</li>
+							<li class="nav-item mr-lg-4">
+								<a class="nav-link" href="#howitworks">How does It work</a>
+							</li>
+							<li class="nav-item mr-lg-4">
+								<a class="nav-link" href="#project">The project</a>
+							</li>
+							<li class="nav-item mr-lg-0 mt-3 mt-lg-0">
+								<a class="btn btn-primary text-white" href="docs.html"><i class="fas fa-book fa-fw"></i> Documentation</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+            </div><!--//container-->
+        </div><!--//branding-->
+    </header><!--//header-->
+
+    <section class="hero-section py-3 py-md-5">
+	    <div class="container">
+		    <div class="row">
+			    <div class="col-12 col-lg-6 pt-3 mb-5 mb-lg-0">
+				    <h1 class="site-headline font-weight-bold mb-3">Install and manage your server like a pro</h1>
+				    <div class="site-tagline mb-4">With Cipi you don’t need to be a Sys Admin to deploy and manage websites and PHP applications powered by cloud VPS. Cipi is an Open Source project and you can use it within <span id="typewriter" class="text-primary font-weight-bold"></span>.</div>
+				    <div class="cta-btns mb-lg-3">
+					    <a class="btn btn-primary mr-2 mb-3" href="#install">Install<i class="fas fa-terminal ml-2"></i></a>
+					    <a class="btn btn-secondary mb-3" href="docs.html">Docs<i class="fas fa-book ml-2"></i></a>
+				    </div>
+			    </div>
+			    <div class="col-12 col-lg-6 text-center">
+				    <img class="hero-figure mx-auto" src="assets/images/promo-figure-alt.svg" alt="">
+			    </div>
+		    </div><!--//row-->
+	    </div>
+    </section><!--//hero-section-->
+
+    
+    <section class="benefits-section theme-bg-light py-5">
+	    
+		<a name='features'></a>
+	    <div class="container">
+		    <h3 class="mb-2 text-center font-weight-bold section-title">Features</h3>
+		    <div class="mb-5 text-center section-intro">Cipi is a modern control panel for your cloud service</div>
+
+			<div class="row">
+		        <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner rounded">
+					    <div class="icon-holder text-center mx-auto mb-3">
+					        <i class="fas fa-magic"></i>
+					    </div><!--//icon-holder-->
+					    <h5 class="mb-3">It's magic</h5>
+					    <div>Install and configure one or more servers with a click in few minutes.</div>
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner rounded">
+					    <div class="icon-holder text-center mx-auto mb-3">
+					        <i class="fas fa-cloud"></i>
+					    </div><!--//icon-holder-->
+					    <h5 class="mb-3">Born for cloud</h5>
+					    <div>Cipi works on AWS, Digital Ocean, Google Cloud and other providers.</div>
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+				<div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner rounded">
+					    <div class="icon-holder text-center mx-auto mb-3">
+					        <i class="fas fa-coffee"></i>
+					    </div><!--//icon-holder-->
+					    <h5 class="mb-3">Easy to use</h5>
+					    <div>Manage one or more servers as easily as having a coffee.</div>
+				    </div><!--//item-inner-->
+			    </div><!--//item--> 
+		    </div><!--//row-->
+
+		    <div class="row">
+				<div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner rounded">
+					    <div class="icon-holder text-center mx-auto mb-3">
+					        <i class="fab fa-php"></i>
+					    </div><!--//icon-holder-->
+					    <h5 class="mb-3">Friend of PHP</h5>
+					    <div>Cipi creates an amazing LEMP stack for your PHP projects.</div>
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+		        <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner rounded">
+					    <div class="icon-holder text-center mx-auto mb-3">
+					        <i class="fas fa-lock"></i>
+					    </div><!--//icon-holder-->
+					    <h5 class="mb-3">Secure & up to date</h5>
+					    <div>Cipi takes care of your server's security and updates.</div>
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-6 col-lg-4">
+				    <div class="item-inner rounded">
+					    <div class="icon-holder text-center mx-auto mb-3">
+					        <i class="fas fa-code"></i>
+					    </div><!--//icon-holder-->
+					    <h5 class="mb-3">Ready to integration</h5>
+					    <div>Cipi comes with awesome APIs useful to integrate everywhere.</div>
+				    </div><!--//item-inner-->
+			    </div><!--//item-->
+		    </div><!--//row-->
+
+	    </div>
+	    
+    </section><!--//benefits-section-->
+
+    <a name='howitworks'></a>
+    <section class="how-section py-5">
+
+	    <div class="container">
+		    <h3 class="mb-2 text-center font-weight-bold section-title">How Does It Work</h3>
+		    <div class="mb-5 text-center section-intro">You're only a few simple steps away</div>
+		    
+		    <div class="row">
+			    <div class="item col-12 col-md-4">
+				    <div class="icon-holder">
+					    <img src="assets/images/streamline-free/monitor-loading-progress.svg" alt="">
+					    <div class="arrow-holder d-none d-lg-inline-block"></div>
+				    </div><!--//icon-holder-->
+				    <div class="desc p-3">
+						<h5><span class="step-count mr-2">1</span>Install</h5>
+					    <p>Install Cipi on your server running<br><a href="#">wget -O - https://cipi.sh/go.sh | bash</a><br>in a fresh installation of Ubuntu 20.04.</p>
+				    </div><!--//desc-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-4">
+				    <div class="icon-holder">
+					    <img src="assets/images/streamline-free/monitor-window.svg" alt="">
+					    <div class="arrow-holder d-none d-lg-inline-block"></div>
+				    </div><!--//icon-holder-->
+				    <div class="desc p-3">
+						<h5><span class="step-count mr-2">2</span>Manage</h5>
+					    <p>Use the amazing Cipi UI to manage the settings of your sites (alias domains, Git repo, PHP-FPM version, SSL certs, etc...)</p>
+				    </div><!--//desc-->
+			    </div><!--//item-->
+			    <div class="item col-12 col-md-4">
+				    <div class="icon-holder">
+					    <img src="assets/images/streamline-free/monitor-cash-credit-card.svg" alt="">
+				    </div><!--//icon-holder-->
+				    <div class="desc p-3">
+						<h5><span class="step-count mr-2">3</span>Deploy</h5>
+					    <p>Deploy amazing projects on a powerful LEMP stack build for your websites, web-apps and e-commerce.</p>
+				    </div><!--//desc-->
+			    </div><!--//item-->
+		    </div><!--//row-->
+			
+	    </div><!--//container-->
+    </section><!--//how-section-->
+
+
+	<a name='install'></a>
+    <section class="cta-section text-center py-5 theme-bg-dark position-relative">
+	    <div class="theme-bg-shapes-right"></div>
+	    <div class="theme-bg-shapes-left"></div>
+	    <div class="container">
+			<img class="hero-figure mx-auto" src="assets/images/programmer-male.svg" style="max-height: 400px;">
+		    <h3 class="mb-2 text-white mb-3">Get Cipi</h3>
+		    <div class="section-intro text-white mb-3 single-col-max mx-auto">Run <code>wget -O - https://cipi.sh/go.sh | bash</code> in your VPS.</div>
+	    </div>
+    </section><!--//cta-section-->
+               
+    
+	<a name='project'></a>
+    <footer class="footer">
+	    <div class="container py-5 mb-3">
+			<h3 class="mb-2 text-center font-weight-bold section-title">The Project</h3>
+			<div class="mb-5 text-center section-intro">Made with <i class="fa fa-heart"></i> for developers</div>
+		    <div class="row">
+			    <div class="footer-col col-md-8">
+				    <h4 class="col-heading">About Cipi</h4>
+					<p>Cipi is a Laravel based cloud server control panel that supports Digital Ocean, AWS, Linode, Azure, Vultr, Google Cloud and other VPS. It comes with nginx, Mysql, multi PHP-FPM versions, multi-users, Supervisor, Composer, npm, free Let's Encrypt certificates, Git deployment, fail2ban, Redis, API and with a simple graphical interface useful to manage Laravel, Codeigniter, Symfony, WordPress or other PHP sites.</p>
+			    </div><!--//footer-col-->
+			    <div class="footer-col col-md-4">
+				    <h4 class="col-heading">Why use Cipi?</h4>
+					<p>Cipi is easy, stable, powerful and free for any personal and commercial use and it's a perfect alternative to Runcloud, Ploi.io, Serverpilot, Forge, Moss.sh and similar software...</p>
+			    </div><!--//footer-col-->
+		    </div><!--//row-->
+	    </div><!--//container-->
+	    <div class="container">
+		    <hr>
+	    </div>
+	    <div class="footer-bottom text-center pb-5">
+	        <small class="copyright">Do you need support? Please open an <a href="https://github.com/andreapollastri/cipi/issues" target="_blank">issue</a>.</small>
+	        <ul class="social-list list-unstyled pt-4 mb-0">
+			    <li class="list-inline-item"><a href="https://github.com/andreapollastri/cipi" target="_blank"><i class="fab fa-github fa-fw"></i></a></li> 
+	            <li class="list-inline-item"><a href="https://www.facebook.com/cipipanel" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+	        </ul><!--//social-list-->
+	    </div>
+    </footer>
+
+	<!-- Back to top -->
+	<a href="#" id="back-to-top" title="Back to top">↑</a>
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    
+    
+    <!-- Page Specific JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="assets/js/highlight-custom.js"></script> 
+    <script src="assets/plugins/typewriterjs/dist/core.js"></script> 
+    <script src="assets/js/typewriter-custom.js"></script>
+	
+	<!-- Custom JS -->
+	<script type="text/javascript">
+		if ($('#back-to-top').length) {
+			var scrollTrigger = 100, // px
+				backToTop = function () {
+					var scrollTop = $(window).scrollTop();
+					if (scrollTop > scrollTrigger) {
+						$('#back-to-top').addClass('show');
+					} else {
+						$('#back-to-top').removeClass('show');
+					}
+				};
+			backToTop();
+			$(window).on('scroll', function () {
+				backToTop();
+			});
+			$('#back-to-top').on('click', function (e) {
+				e.preventDefault();
+				$('html,body').animate({
+					scrollTop: 0
+				}, 700);
+			});
+		}
+		$(function() {
+			$('a[href*="#"]:not([href="#"])').click(function() {
+				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					if (target.length) {
+						$('html, body').animate({
+							scrollTop: target.offset().top - 120
+						}, 800);
+						return false;
+					}
+				}
+			});
+		});
+	</script>
+
+	<!-- GA -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1396990-60"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-1396990-60');
+	</script>
+
+	<!-- CL -->
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		window.addEventListener("load", function() {
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#000",
+						"text": "#fff"
+					},
+					"button": {
+						"background": "#fff",
+						"text": "#000"
+					}
+				},
+				"content": {
+					"message": "Hey! This website uses Google Analytics and its cookies to analyze website traffic statistics!",
+					"dismiss": "OK! I accept it!",
+					"link": "More info",
+					"href": "https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage"
+				},
+				"theme": "edgeless"
+			})
+		});
+	</script>
+
+</body>
+</html> 
+
