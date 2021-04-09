@@ -1,16 +1,749 @@
-
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>CIPI - Coming Soon</title>
-      <style>html{font-family: Arial, sans-serif; color: #000; font-size: 16px; font-weight: 400;}main{margin: 5rem 0 0 5rem;}h1, p{margin-top: 0; margin-bottom: 2rem;}h1{font-weight: 700; font-size: 4.5rem;}p{color: #7d7d7d; font-size: 1.75rem;}@media screen and (max-width: 768px){html{font-size: 12px;}main{margin: 3rem 0 0 3rem;}}</style>
-   </head>
-   <body>
-      <main>
-         <h1>Cipi v3 documentation coming soon!</h1>
-         <p>Cipi v3 is available in Github and its documentation will be update soon...</p>
-      </main>
-   </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>Cipi - Control Panel | Documentation</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cipi is a Laravel based cloud server control panel that supports Digital Ocean, AWS, Linode, Azure, Vultr, Google Cloud and other VPS. It comes with nginx, Mysql, multi PHP-FPM versions, multi-users, Supervisor, Composer, npm, free Let's Encrypt certificates, Git deployment, fail2ban, Redis, API and with a simple graphical interface useful to manage Laravel, Codeigniter, Symfony, WordPress or other PHP sites.">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+	<!-- Custom CSS -->
+	<style>
+		#back-to-top {
+			position: fixed;
+			bottom: 40px;
+			right: 40px;
+			z-index: 9999;
+			width: 32px;
+			height: 32px;
+			text-align: center;
+			line-height: 30px;
+			background: #f5f5f5;
+			color: #444;
+			cursor: pointer;
+			border: 0;
+			border-radius: 2px;
+			text-decoration: none;
+			transition: opacity 0.2s ease-out;
+			opacity: 0;
+		}
+		#back-to-top:hover {
+			background: #e9ebec;
+		}
+		#back-to-top.show {
+			opacity: 1;
+		}
+		.space {
+			min-height: 40px;
+		}
+		.minispace {
+			min-height: 20px;
+		}
+	</style>
+
+</head> 
+
+<body class="docs-page">    
+    <header class="header fixed-top">	    
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+					<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible mr-2 d-xl-none" type="button">
+	                    <span></span>
+	                    <span></span>
+	                    <span></span>
+	                </button>
+	                <div class="site-logo"><a class="navbar-brand" href="index.html"><span class="logo-text">Cipi<span class="text-alt"> Control Panel</span></span></a></div>    
+                </div><!--//docs-logo-wrapper-->
+	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+						<li class="list-inline-item"><a href="https://github.com/andreapollastri/cipi" target="_blank"><i class="fab fa-github fa-fw"></i></a></li>
+		            </ul><!--//social-list-->
+	            </div><!--//docs-top-utilities-->
+            </div><!--//container-->
+        </div><!--//branding-->
+    </header><!--//header-->
+    
+    <div class="docs-wrapper">
+	    <div id="docs-sidebar" class="docs-sidebar">
+		    <div class="top-search-box d-lg-none p-3">
+                <form class="search-form">
+		            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+		        </form>
+            </div>
+		    <nav id="docs-nav" class="docs-nav navbar">
+			    <ul class="section-items list-unstyled nav flex-column pb-3">
+				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder mr-2"><i class="fas fa-play-circle"></i></span>Getting Started</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Features</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Installation</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">Security Tips</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder mr-2"><i class="fas fa-tachometer-alt"></i></span>Dashboard</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-3"><span class="theme-icon-holder mr-2"><i class="fas fa-server"></i></span>Servers</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Deploy a server</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-2">Manage a server</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">Server monitor</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-4">Server information</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-5">Server services</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-6">Server PHP CLI</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-7">Server crontab</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-8">Server root password</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-9">Server HD usage</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-10">Server Cipi build</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-11">Destroy a server</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder mr-2"><i class="fas fa-rocket"></i></span>Sites</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">Create a site</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">Manage a site</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-3">Site Information</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-4">Site Aliases</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-5">Site SSL Certs</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-6">Site SSH Reset</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-7">Site MySql Reset</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-8">Site Application Installer</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-9">Site Github Repository</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-10">Site PHP-FPM version</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-11">Site Supervisor command</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-12">Customize site nginx conf</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-4-13">Destroy a site</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder mr-2"><i class="fas fa-cog"></i></span>Settings</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder mr-2"><i class="fas fa-code"></i></span>API Docs</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-7"><span class="theme-icon-holder mr-2"><i class="far fa-life-ring"></i></span>Support</a></li>
+			    </ul>
+
+		    </nav>
+	    </div>
+	    <div class="docs-content">
+		    <div class="container">
+			    <article class="docs-article" id="section-1">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Getting Started <span class="docs-time">Last updated: 2021-04-09</span></h1>
+					    <section class="docs-intro">
+						    <p>Cipi is a Laravel based cloud server control panel that supports Digital Ocean, AWS, Linode, Azure, Vultr, Google Cloud and other VPS. It comes with nginx, Mysql, multi PHP-FPM versions, multi-users, Supervisor, Composer, npm, free Let's Encrypt certificates, Git deployment, fail2ban, Redis, API and with a simple graphical interface useful to manage Laravel, Codeigniter, Symfony, WordPress or other PHP sites.</p>
+						</section>
+				    </header>
+				    <section class="docs-section" id="item-1-1">
+						<h2 class="section-heading">Features</h2>
+						<p>
+							<ul>
+								<li>Easy install: setup one or more servers with a click in less than ten minutes without be a Linux expert.</li>
+								<li>Server Management: manage one or more servers in as easy as a few clicks without be a LEMP Guru.</li>	
+								<li>Perfect stack for PHP devs: Cipi comes with nginx, PHP, MySql, Composer, npm, Redis and Supervisor.</li>
+								<li>Multi-PHP: Run simultaneous PHP versions at your ease & convenience.</li>
+								<li>Secure: no unsed open ports, unprivileged PHP, isolated system users and filesystem, only SFTP (no insecure FTP), http/2, Free SSL certificates everywhere.</li>
+								<li>Always update: Cipi takes care about your business and automatically keeps your server's software up to date so you always have the latest security patches.</li>
+								<li>Real-time servers stats: Keep an eye on everything through an awesome dashboard.</li>
+								<li>Always up to date: Cipi installs last versions of LTS dists and supports Ubuntu 20.04 LTS.</li>
+							</ul>
+						</p>
+						<div class="space"></div>
+						<h5>Cipi Stack</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th style="width:40%" scope="col">Linux OS</th>
+										<th style="width:30%" scope="col" class="text-center">Ubuntu 20.04 LTS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th style="width:40%" scope="row">nginx</th>
+										<td class="text-center">1.18</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">MySql</th>
+										<td class="text-center">8</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">node.js</th>
+										<td class="text-center">15</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">npm</th>
+										<td class="text-center">7</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">PHP-FPM</th>
+										<td class="text-center">7.3 / 7.4 / 8.0</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">PHP CLI</th>
+										<td class="text-center">7.3 / 7.4 / 8.0</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">PHP .ini custom configutation<br>
+											max_filesize / execution_time</th>
+										<td class="text-center">256MB / 180</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">PHP-FPM pool (for each application)<br>
+											pm.max_children / pm.max_requests</th>
+										<td class="text-center">50 / 500</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">PHP extensions</th>
+										<td class="text-center">common, curl, openssl, bcmath, mbstring, tokenizer, mysql, sqlite3, pgsql, redis, memcached, json, zip, xml, soap, gd, imagick, fileinfo, imap, cli</td>
+									</tr>								
+									<tr>
+										<th style="width:40%" scope="row">Redis</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">Composer</th>
+										<td class="text-center">2.x</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">Supervisor</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">Git</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">Let's Encrypt</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">http/2 Support</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">fail2ban</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">ffmpeg</th>
+										<td class="text-center">yes</td>
+									</tr>
+									<tr>
+										<th style="width:40%" scope="row">SSH/SFTP</th>
+										<td class="text-center">yes</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+					</section>
+					
+					<section class="docs-section" id="item-1-2">
+						<h2 class="section-heading">Installation</h2>
+						<p>The best way to install Cipi is running autoinstall script on a VPS with 20.04 LTS (fresh installation):
+							<div class="minispace"></div>
+							<code>wget -O - https://cipi.sh/go.sh | bash</code>
+							<div class="minispace"></div>
+							AWS by default disables root login. To login as root inside AWS, login as default user and then use command sudo -s.
+							<ul>
+								<li><code>$ ssh ubuntu@&lt;your server IP address&gt;</code></li>
+								<li><code>$ ubuntu@aws:~$ sudo -s</code></li>
+								<li><code>$ root@aws:~# wget -O - https://cipi.sh/go.sh | bash	</code></li>
+							</ul>
+							<div class="space"></div>
+							At the end of installation process, Cipi will show some password that you have to conserve.
+							<div class="minispace"></div>
+							Before you can use Cipi, please make sure your server fulfils these requirements:
+							<ul>
+								<li>Ubuntu 20.04 x86_64 LTS (Fresh installation)</li>
+								<li>If the server is virtual (VPS), OpenVZ may not be supported (Kernel 2.6)</li>
+								<li>Hardware Requirement: More than 1GB of HDD / At least 1 core processor / 512MB minimum RAM / At least 1 public IP Address (NAT VPS is not supported)</li>
+								<li>For VPS providers such as AWS, those providers already include an external firewall for your VPS, please open port 22, 80 and 443 to install and use Cipi.</li>
+								<li>Installation may take up to about 30 minutes which may also depend on your server's internet speed. After the installation is completed, you are ready to use Cipi to manage your servers.</li>
+								<li>To correctly manage remote servers Cipi has to be on a public IP address... do not use it in localhost!</li>
+							</ul>
+						</p>
+						<div class="space"></div>
+					</section>
+					
+					<section class="docs-section" id="item-1-3">
+						<h2 class="section-heading">Security Tips</h2>
+						<p>Default Cipi username and password are: <i>administrator</i> / <i>12345678</i>.<br>
+						After first login, you could change them into "settings" area.
+						<div class="minispace"></div>
+						At the end of installation process, Cipi will show some password that you have to conserve bacause Cipi will disable "root" access so the only way to SSH into your server after Cipi installation as root is using "cipi" user.
+						<div class="space"></div>
+						Another useful tip to keep safe your Cipi Panel, is to configure a panel domain/subdomain into "settings area" and require a free SSL certicate for it.</p>
+					</section>
+				</article>
+
+
+
+
+				<article class="docs-article" id="section-2">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Dashboard</h1>
+					    <section class="docs-intro">
+						    <p>
+								Cipi Dashboard is for viewing your installed servers status. The summary page will display in real-time:
+								<ul>
+									<li>Server Name</li>
+									<li>Server Sites number</li>
+									<li>Server CPU usage (in %)</li>
+									<li>Server RAM usage (in %)</li>
+									<li>Server HDD usage (in %)</li>
+								</ul>
+							</p>
+							<p>
+								<img src="assets/images/docs/dashboard.png" style="width: 100%;">
+							</p>
+						</section>
+				    </header>
+				</article>
+				
+
+
+
+
+				<article class="docs-article" id="section-3">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Servers</h1>
+					    <section class="docs-intro">
+						    <p>Servers area is for viewing your servers list, create new server, manage or delete one of them.</p>
+								<p>The table shows:
+								<ul>
+									<li>Server Name</li>
+									<li>Server IP</li>
+									<li>Server Provider</li>
+									<li>Server Location</li>
+									<li>Server Action (Manage server and Destroy server)</li>
+								</ul>
+							</p>
+							<p>By default, Cipi installa "This VPS!" server that lets you to manage the server where Cipi is installed.</p>
+						</section>
+				    </header>
+				     <section class="docs-section" id="item-3-1">
+						<h2 class="section-heading">Deploy Server</h2>
+						<p>
+							To deploy a new server, click on button:<span style="margin-right: 8px;"></span><a href="#" class="btn btn-sm btn-secondary" style="padding: 5px;"><i class="fas fa-plus fa-sm text-white-50"></i> New Server</a> into Server area.
+							<span style="margin-right: 8px;"></span>and fill the form with these data:
+							<div class="table-responsive my-4">
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">Name</a></th>
+											<td>The name of Server (e.g. "Production Server") </td>
+										</tr>
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">IP</a></th>
+											<td>The IP of the Server (IPv4 not IPv6) </td>
+										</tr>
+										
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">Provider</a></th>
+											<td>Server Provider (e.g. "Digital Ocean")</td>
+										</tr>
+										
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">Location</a></th>
+											<td>Server location (e.g. "Amsterdam DC3") </td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							Submiting the form, an installation script will appears, copy it and run into your server. At the end of installation process, Cipi will automatically detect the end of installation and will lets you to manage the new server.
+						</p>
+					</section>
+					
+					<section class="docs-section" id="item-3-2">
+						<h2 class="section-heading">Manage a server</h2>
+						<p>
+							To manage a server you have to click on <a href="#" class="btn btn-sm btn-primary" style="padding: 5px;"><i class="fas fa-cog fa-sm text-white-50"></i> Manage</a> button into Servers area and Cipi will show you a page like this:
+						</p>
+						<p>
+							<img src="assets/images/docs/server.png" style="width: 100%;">
+						</p>
+					</section>
+					
+					<section class="docs-section" id="item-3-3">
+						<h2 class="section-heading">Server monitor</h2>
+						<p>
+							Cipi shows realtime usage status of server CPU and RAM into "MANAGE SERVER" area.
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-3-4">
+						<h2 class="section-heading">Server information</h2>
+						<p>Each server information can be edited filling "Server information" form into "MANAGE SERVER" area:
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<th class="theme-bg-light"><a class="theme-link" href="#">Name</a></th>
+										<td>Edit Server Name</td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light"><a class="theme-link" href="#">IP</a></th>
+										<td>Edit Server IP</td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light"><a class="theme-link" href="#">Provider</a></th>
+										<td>Edit Server Provider</td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light"><a class="theme-link" href="#">Location</a></th>
+										<td>Edit Server Location</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-3-5">
+						<h2 class="section-heading">Server services</h2>
+						<p>Each server service can be restarted clicking a button into "MANAGE SERVER" area.<br>
+							The managed services are:
+							<ul>
+								<li>nginx</li>
+								<li>PHP-FPM</li>
+								<li>MySql</li>
+								<li>Redis</li>
+								<li>Supervisor</li>
+							</ul>
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-3-6">
+						<h2 class="section-heading">Server PHP CLI</h2>
+						<p>For each server you can choose which PHP version use into the CLI within a simple select into "MANAGE SERVER" area.<br>
+							Available versions are:
+							<ul>
+								<li>PHP 7.3</li>
+								<li>PHP 7.4</li>
+								<li>PHP 8.0</li>
+							</ul>
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-3-7">
+						<h2 class="section-heading">Server crontab</h2>
+						<p>For each server you can edit crontab into "MANAGE SERVER" area.</p>
+						<p>
+							<img src="assets/images/docs/cron.png" style="width: 100%;">
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-3-8">
+						<h2 class="section-heading">Server root password</h2>
+						<p>For security reasons, Cipi disabels "root" user and create a secondary root user with "cipi" username.<br>
+						To reset cipi User password click: <a href="#" class="btn btn-sm btn-danger" style="padding: 5px;">Require Reset</a> into "MANAGE SERVER" area.</p>
+					</section>
+
+					<section class="docs-section" id="item-3-9">
+						<h2 class="section-heading">Server HD usage</h2>
+						<p>Cipi shows a realtime server HD usage status into "MANAGE SERVER" area.</p>
+					</section>
+
+					<section class="docs-section" id="item-3-10">
+						<h2 class="section-heading">Server Cipi build</h2>
+						<p>Cipi shows the version of Cipi Client build into "MANAGE SERVER" area.</p>
+					</section>
+
+					<section class="docs-section" id="item-3-11">
+						<h2 class="section-heading">Destroy a server</h2>
+						<p>To destroy a server you have just to click <a href="#" class="btn btn-sm btn-danger" style="padding: 5px;"><i class="fas fa-times fa-sm text-white-50"></i> Delete</a> button into "Servers" area.</p>
+					</section>
+
+				</article>
+			
+
+
+
+				<article class="docs-article" id="section-4">
+
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Sites</h1>
+					    <section class="docs-intro">
+						    <p>
+								A site is your website/webapp consisting of files that will be used for functionality and display purposes.<br>
+								With Cipi, every Site is separated from each other because each app contains its own settings, database, permissions and PHP-FPM pool. This method allows to each user to be secure and protected in its own right. If one of your websites is compromised, the others would be completely safe.
+								<div class="minispace"></div>
+								Sites area is for viewing your applications list, create new Site, manage or delete one of them. The page will display:
+								<div class="minispace"></div>
+								<ul>
+									<li>Site (main) Domain</li>
+									<li>Site Aliases Number</li>
+									<li>Site Server Name</li>
+									<li>Site Server IP</li>
+									<li>Site Action (Manage and Destroy Site)</li>
+								</ul>
+								<div class="minispace"></div>
+							</p>
+						</section>
+					</header>
+
+
+					<section class="docs-section" id="item-4-1">
+						<h2 class="section-heading">Create a site</h2>
+						<p>
+							To create a site, click on button:<span style="margin-right: 8px;"></span><a href="#" class="btn btn-sm btn-secondary" style="padding: 5px;"><i class="fas fa-plus fa-sm text-white-50"></i> New Site</a> into Sites area.
+							<span style="margin-right: 8px;"></span>and fill the form with these data:
+							<div class="table-responsive my-4">
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">Domain</a></th>
+											<td>The main site domain (e.g. <i>domain.ltd</i> or <i>subdomain.domain.ltd</i>) </td>
+										</tr>
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">Server</a></th>
+											<td>Destination Server </td>
+										</tr>
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">PHP-FPM version</a></th>
+											<td>PHP Version (7.3, 7.4 or 8.0) </td>
+										</tr>
+										<tr>
+											<th class="theme-bg-light"><a class="theme-link" href="#">Basepath</a></th>
+											<td>Entrypoint of Document Root (e.g. "public" in Laravel Applications)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							At the end you will receive a summary with SFTP/SSH and database credentials useful to manage your new Site.
+						</p>
+					</section>
+					
+				    <section class="docs-section" id="item-4-2">
+						<h2 class="section-heading">Manage a site</h2>
+						<p>
+							To manage a site you have to click on <a href="#" class="btn btn-sm btn-primary" style="padding: 5px;"><i class="fas fa-cog fa-sm text-white-50"></i> Manage</a> button into Sites area and Cipi will show you a page like this:
+						</p>
+						<p>
+							<img src="assets/images/docs/site.png" style="width: 100%;">
+						</p>
+					</section>
+
+
+					<section class="docs-section" id="item-4-3">
+						<h2 class="section-heading">Site information</h2>
+						<p>Each site information can be edited filling "Site basic information" form into "MANAGE SITE" area:
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<th class="theme-bg-light"><a class="theme-link" href="#">Domain</a></th>
+										<td>Edit Site Main Domain</td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light"><a class="theme-link" href="#">Basepath</a></th>
+										<td>Edit Entrypoint of Document Root</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						</p>
+					</section>
+
+					
+					<section class="docs-section" id="item-4-4">
+						<h2 class="section-heading">Site Aliases</h2>
+						<div class="row">
+							<div class="col-12 col-md-4">
+								<img src="assets/images/docs/aliases.png" style="width: 100%;">
+							</div>
+							<div class="col-12 col-md-8">
+								<p>Cipi lets to manage unlimited domain aliases for each site. You can manage them in "Manage Alias" box into "MANAGE SITE" area.</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="docs-section" id="item-4-5">
+						<h2 class="section-heading">Site SSL Certs</h2>
+						<p>Cipi generates free Let's Encrypt SSL certificates for each site domain and alias domains.<br>
+						To do it, be sure that you server 443 port is open and click "Generate SSLs" button into "MANAGE SITE" area.<br>
+						Certificats renew is managed automatically by Cipi server client so you don't need to worry about it.</p>
+					</section>
+
+
+					<section class="docs-section" id="item-4-6">
+						<h2 class="section-heading">Site SSH Reset</h2>
+						<p>Every site is associated to an unique SSH user so each site is isolated from each other.<br>
+						To reset SSH user password click on "password reset SSH" button into "MANAGE SITE" area.<br>
+						At the end you will receive a summary with SFTP/SSH and database credentials.</p>
+					</section>
+
+					<section class="docs-section" id="item-4-7">
+						<h2 class="section-heading">Site MySql Reset</h2>
+						<p>Every site is associated to a MySql database and MySql user.<br>
+						To reset MySql user password click on "password reset MySql" button into "MANAGE SITE" area.<br>
+						At the end you will receive a summary with SFTP/SSH and database credentials.</p>
+					</section>
+
+					<section class="docs-section" id="item-4-8">
+						<h2 class="section-heading">Site Application Installer</h2>
+						<p>This feature is not ready yet.</p>
+					</section>
+
+					<section class="docs-section" id="item-4-9">
+						<h2 class="section-heading">Site Github Repository</h2>
+						<p>Configure a Github repository inside your site is very easy with Cipi.<br>
+						Follow the steps inside "Github Repository" box into "MANAGE SITE" area:
+						<ul>
+							<li>Set Github repository</li>
+							<li>Set repository branch</li>
+							<li>Add deploy key into github.com</li>
+							<li>Use sh script to deploy your site</li>
+						</ul>
+						</p>
+					</section>
+
+
+					<section class="docs-section" id="item-4-10">
+						<h2 class="section-heading">Site PHP-FPM version</h2>
+						<p>For each site you can choose which PHP FPM version use within a simple select into "MANAGE SITE" area.<br>
+							Available versions are:
+							<ul>
+								<li>PHP 7.3</li>
+								<li>PHP 7.4</li>
+								<li>PHP 8.0</li>
+							</ul>
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-4-11">
+						<h2 class="section-heading">Site Supervisor command</h2>
+						<p>For each site you can set a supervisor command filling "supervisor" input into "MANAGE SITE" area.<br>
+							For example you can set queue jobs into a Laravel site using this command:<br>
+							<code>
+								php /home/cpUser/web/artisan queue:work sqs --sleep=3 --tries=3 --max-time=3600
+							</code>
+						</p>
+					</section>
+
+
+					<section class="docs-section" id="item-4-12">
+						<h2 class="section-heading">Customize site nginx conf</h2>
+						<p>
+							You can customize every Site nginx configuration using cipi root user:
+							<ul>
+								<li>Run <code>ssh cipi@&lt;server-ip&gt;</code></li>
+								<li>Run <code>sudo nano /etc/nginx/cipi/&lt;app-user&gt;.conf</code></li>
+								<li>Edit your custom configuration</li>
+								<li>Run <code>sudo systemctl restart nginx.service</code></li>
+							</ul>
+						</p>
+					</section>
+
+					<section class="docs-section" id="item-4-13">
+						<h2 class="section-heading">Destroy a site</h2>
+						<p>To destroy an site you have just to click <a href="#" class="btn btn-sm btn-danger" style="padding: 5px;"><i class="fas fa-times fa-sm text-white-50"></i> Delete</a> button into "Sites" area.</p>
+					</section>  
+
+			    </article>
+				
+			    
+			    <article class="docs-article" id="section-5">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Settings</h1>
+						<section class="docs-intro">
+						    <p>
+								<img src="assets/images/docs/settings.png" style="width: 100%;">
+							</p>
+							<p>Cipi settings area lets you to manage:
+								<ul>
+									<li>Change Cipi username</li>
+									<li>Change Cipi password</li>
+									<li>Change Cipi domain/subdomain</li>
+									<li>Generate Cipi domain/subdomain SSL</li>
+									<li>Renew Cipi API key</li>
+									<li>View Cipi API endpoint</li>
+									<li>View Cipi API documentation</li>
+								</ul>
+							</p>
+						</section>
+				    </header>
+			    </article>
+			    
+			    
+			    <article class="docs-article" id="section-6">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">API Docs</h1>
+					    <section class="docs-intro">
+						    <p>Cipi has REST APIs useful to manage every server and site action.<br>
+								You can find an updated API documentation base on Open API at <code>YOUR-IP/api/docs/</code>.
+							</p>
+							<p>
+								<img src="assets/images/docs/api.png" style="width: 100%;">
+							</p>
+						</section>
+				    </header>
+			    </article>
+				
+
+				<article class="docs-article" id="section-7">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Support</h1>
+					    <section class="docs-intro">
+						    <p>
+								Cipi is an open-source software licensed under the MIT license and developed by <a target="_blank" class="theme-link"  href="https://andreapollastri.dev"><u>Andrea Pollastri</u></a>.<br>
+								If you have any issue with Cipi, please open an <a target="_blank" class="theme-link"  href="https://github.com/andreapollastri/cipi/issues"><u>issue on Github</u></a>.<br>
+							</p>
+						</section>
+				    </header>
+			    </article>
+
+		    </div> 
+	    </div>
+    </div>
+    
+
+	<!-- Back to top -->
+	<a href="#" id="back-to-top" title="Back to top">↑</a>
+   
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    
+    
+    <!-- Page Specific JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="assets/js/highlight-custom.js"></script> 
+    <script src="assets/plugins/jquery.scrollTo.min.js"></script>
+    <script src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script> 
+    <script src="assets/js/docs.js"></script> 
+	<!-- Custom JS -->
+	<script type="text/javascript">
+		if ($('#back-to-top').length) {
+			var scrollTrigger = 100, // px
+				backToTop = function () {
+					var scrollTop = $(window).scrollTop();
+					if (scrollTop > scrollTrigger) {
+						$('#back-to-top').addClass('show');
+					} else {
+						$('#back-to-top').removeClass('show');
+					}
+				};
+			backToTop();
+			$(window).on('scroll', function () {
+				backToTop();
+			});
+			$('#back-to-top').on('click', function (e) {
+				e.preventDefault();
+				$('html,body').animate({
+					scrollTop: 0
+				}, 700);
+			});
+		}
+	</script>
+
+</body>
+</html> 
+
