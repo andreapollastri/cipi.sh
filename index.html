@@ -51,6 +51,9 @@
 		#back-to-top.show {
 			opacity: 1;
 		}
+		.space {
+			min-height: 25px;
+		}
 	</style>
 
 </head> 
@@ -251,6 +254,23 @@
 					<p>Cipi is easy, stable, powerful and free for any personal and commercial use and it's a perfect alternative to Runcloud, Ploi.io, Serverpilot, Forge, Moss.sh and similar software... <a target="_blank" href="https://paypal.me/andreapollastri"><b><u>Support it!</u></b></a></p>
 			    </div><!--//footer-col-->
 		    </div><!--//row-->
+			<div class="space"></div>
+			<div class="row">
+			    <div class="footer-col col-md-8">
+				    <h4 class="col-heading">Cipi installations map</h4>
+					<iframe src="map.html" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<div class="space"></div>
+				</div><!--//footer-col-->
+			    <div class="footer-col col-md-4">
+				    <h4 class="col-heading">Cipi has been installed on</h4>
+					<h2 id="count"></h2>
+					<p>(current realtime data based only on main panel installations, client servers are not counted)</p>
+					<p>Installations map shows the location of datacenters where are hosted VPSs that use Cipi.</p>
+					<p>The installations map is update in realtime and the analytics are anonymos base on a GET Curl.</p>
+					<p>Most used provider by Cipi users is:</p>
+					<p><center><h1><i class="fab fa-aws"></i></h1></center></p>
+			    </div><!--//footer-col-->
+		    </div><!--//row-->
 	    </div><!--//container-->
 	    <div class="container">
 		    <hr>
@@ -319,6 +339,24 @@
 					}
 				}
 			});
+		});
+	</script>
+
+	<!-- INSTALLATION COUNT -->
+	<script>
+		function load(url, callback) {
+			var xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					callback(xhr.response);
+				}
+			}
+			xhr.open('GET', url, true);
+			xhr.send('');
+		}
+		load('https://service.cipi.sh/setupgetcount',function(count) {
+			document.getElementById('count').innerHTML = count+' vps';
 		});
 	</script>
 
